@@ -1,0 +1,61 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/Recommendations" routerLinkActive="active">GIPHER APP</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/Recommendations" routerLinkActive="active">DASHBOARD
+                  
+                </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/Favourites" routerLinkActive="active">FAVOURITES <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/Search" routerLinkActive="active">SEARCH</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logoutUser()">LOGOUT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+ 
+  
+  <!-- Page Content -->
+  <section class="py-5">
+    <div class="container">
+      
+  
+  
+        <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+          <div [fxFlex]="(100/3) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let gif of gifList">
+            <mat-card class="gif-thumbnail">
+              <mat-card-header class="card-header card-thumbnail">
+  
+                <mat-card-subtitle></mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content class="news-content">
+                <img [src]=gif.url alt="Image">
+              </mat-card-content>
+  
+              <mat-card-actions class="news-actions">
+                <button mat-raised-button color="primary" (click)="delete(gif)" class="addButton">Delete</button>
+  
+              </mat-card-actions>
+            </mat-card>
+          </div>
+  
+  
+        </div>
+    </div>
+  </section>

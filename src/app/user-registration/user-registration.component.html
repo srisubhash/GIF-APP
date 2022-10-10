@@ -1,0 +1,67 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<app-home-title></app-home-title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<div class="card bg-light">
+	<article class="card-body mx-auto" style="max-width: 400px;">
+		<h4 class="card-title mt-3 text-center">Create Account</h4>
+		<p class="text-center">Get started with your account</p>
+
+
+		<form (ngSubmit)="regForm.form.valid && registerNow()" #regForm="ngForm" novalidate>
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-user"></i> </span>
+				</div>
+				<input name="fullname" class="form-control" placeholder="Full name" [(ngModel)]="user.fullname"
+					type="text" #fullname="ngModel" required
+					[ngClass]="{'is-invalid':regForm.submitted && fullname.invalid}">
+				<div class="invalid-feedback">
+					<div>Fullname is required</div>
+				</div>
+			</div> <!-- form-group// -->
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+				</div>
+				<input name="userid" class="form-control" placeholder="Email address" type="email"
+					[(ngModel)]="user.userid" #email="ngModel" email
+					[ngClass]="{'is-invalid':regForm.submitted && email.invalid}">
+				<div class="invalid-feedback">
+					<div>Email is required</div>
+
+				</div>
+
+
+			</div> <!-- form-group// -->
+
+
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+				</div>
+				<input name="password" class="form-control" placeholder="Create password" type="password" minlength="8"
+					[(ngModel)]="user.password" #password="ngModel" required
+					[ngClass]="{'is-invalid':regForm.submitted && password.invalid}">
+				<div *ngIf="regForm.submitted && password.invalid" class="invalid-feedback">
+					<div *ngIf="password.errors.required">Password Name is required</div>
+					<div *ngIf="password.errors.minlength">Password must be at least 8 characters</div>
+				</div>
+			</div> <!-- form-group// -->
+			
+			<div class="form-group">
+				<button type="submit" class="btn btn-block"> Create Account </button>
+			</div> <!-- form-group// -->
+			<p class="text-center">Already Have an account? <a routerLink="/Login" routerLinkActive="active">Login</a>
+			</p>
+			<p class="text-center">Go Back to Home <a routerLink="/Home" routerLinkActive="active">Go To Home</a> </p>
+		</form>
+
+	</article>
+</div> <!-- card.// -->

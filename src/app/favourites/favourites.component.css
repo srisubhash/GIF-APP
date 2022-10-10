@@ -1,0 +1,15 @@
+button{
+    background-color: grey;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 20em;
+    letter-spacing: .3px;
+}
+button:hover{
+    background-color: darkgoldenrod;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 20em;
+    letter-spacing: .3px;
+}

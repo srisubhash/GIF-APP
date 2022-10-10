@@ -1,0 +1,19 @@
+.search{
+    max-width: 600ppx;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 18px;
+}
+.search input{
+    width:100%;
+    padding:8px 16px;
+    margin-top:20px;
+}
+
+content { 
+    padding: 16px; 
+  }
+  
+  .content > mat-card { 
+    width: 200px; 
+  }

@@ -1,0 +1,46 @@
+*{
+   
+    background-size: cover;
+}
+.form-group, input{
+    
+    
+    box-shadow: none;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: black;
+    
+    /* border-bottom: 2px solid red; */
+}
+.form-control{
+    border-bottom: 2px solid red;
+}
+
+a{
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    padding: .2em .5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+a:hover {
+    text-decoration: none;
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    background-color: blue;
+  }
+
+.btn-block{
+    background-color: lightgrey;
+      color: white;
+      
+}
+.btn-block:hover{
+    background-color: blue;
+}
